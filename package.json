@@ -1,0 +1,46 @@
+{
+  "name": "neon-life-3d",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:wasm": "clang --target=wasm32 -O3 -nostdlib -matomics -mbulk-memory -Wl,--no-entry -Wl,--export-all -Wl,--allow-undefined -Wl,--import-memory -Wl,--shared-memory -Wl,--max-memory=16777216 -o public/engine.wasm src/wasm/engine.c src/wasm/face.c src/wasm/cube.c src/wasm/cell.c",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.6.0",
+    "@fontsource-variable/geist": "^5.2.9",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "@react-three/postprocessing": "^3.0.4",
+    "boxicons": "^2.1.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "gl-matrix": "^3.4.4",
+    "lucide-react": "^1.21.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "shadcn": "^4.12.0",
+    "tailwind-merge": "^3.6.0",
+    "three": "^0.185.0",
+    "tw-animate-css": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/gl-matrix": "^2.4.5",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.185.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "autoprefixer": "^10.5.2",
+    "oxlint": "^1.69.0",
+    "playwright": "^1.61.1",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^3.4.19",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.0"
+  }
+}
